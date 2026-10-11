@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eaf6ff">
+  <meta name="description" content="Fauna Azul: descubre animales, aprende sobre la naturaleza y encuentra formas de protegerla.">
+  <title>Fauna Azul — Un mundo por descubrir</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <div class="topbar">🌎 Cada especie importa · Aprende, explora y protege</div>
+
+  <header class="header" id="inicio">
+    <a class="brand" href="#inicio" aria-label="Fauna Azul, inicio">
+      <span class="brand-icon">✦</span>
+      <span>fauna<span class="brand-blue">azul</span><small>UN MUNDO VIVO</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="mainNav">
+      <a href="#explora">Explora</a>
+      <a href="#habitats">Hábitats</a>
+      <a href="#protege">Protege</a>
+      <a href="#datos">Curiosidades</a>
+      <a href="#contacto" class="nav-button">Únete a la misión ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> CONOCE LA VIDA SALVAJE</span>
+        <h1>Un planeta.<br>Millones de vidas.<br><em>Un futuro común.</em></h1>
+        <p>Descubre animales increíbles, explora sus hábitats y conoce pequeñas acciones que ayudan a cuidar el hogar que compartimos.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#explora">Explorar animales <span>↗</span></a>
+          <a class="btn btn-ghost" href="#protege"><span class="play">▶</span> ¿Cómo puedo ayudar?</a>
+        </div>
+
+        <div class="hero-stat-row">
+          <div class="stat"><strong>01</strong><span>Planeta que cuidar</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>∞</strong><span>Historias por descubrir</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=85" alt="Jirafas en su hábitat natural" class="hero-image">
+          <div class="image-gradient"></div>
+          <div class="hero-image-caption">
+            <span class="caption-icon">✦</span>
+            <div><b>La naturaleza es extraordinaria</b><small>Un viaje comienza con curiosidad</small></div>
+          </div>
+        </div>
+
+        <div class="float-card float-card-top">
+          <span class="float-icon">🌿</span>
+          <div><b>Respeta su hogar</b><small>La vida silvestre lo necesita</small></div>
+        </div>
+
+        <div class="float-card float-card-bottom">
+          <span class="round-number">01</span>
+          <div><b>Explora con respeto</b><small>Observa sin intervenir</small></div>
+        </div>
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <span class="hero-spark spark-one">✳</span>
+        <span class="hero-spark spark-two">✧</span>
+      </div>
+
+      <div class="hero-bottom">
+        <span>FAUNA AZUL / EXPLORACIÓN</span>
+        <span class="scroll-cue">DESLIZA PARA DESCUBRIR ↓</span>
+      </div>
+    </section>
+
+    <section class="intro section" id="habitats">
+      <div class="intro-symbol">✳</div>
+      <div>
+        <span class="eyebrow">UN HOGAR PARA CADA ESPECIE</span>
+        <h2>La biodiversidad hace<br>que el mundo sea <em>único.</em></h2>
+      </div>
+      <p>Desde océanos profundos hasta bosques frondosos, cada hábitat es parte de una red de vida. Conocerla es el primer paso para protegerla.</p>
+    </section>
+
+    <section class="explore section section-tint" id="explora">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">FICHAS DE EXPLORACIÓN</span>
+          <h2>Conoce a sus <em>habitantes</em></h2>
+          <p>Elige una categoría y descubre datos interesantes de distintas especies.</p>
+        </div>
+        <div class="result-count" id="resultCount">06 ESPECIES</div>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filtrar animales">
+        <button class="filter active" data-filter="todos">Todos</button>
+        <button class="filter" data-filter="mamifero">Mamíferos</button>
+        <button class="filter" data-filter="ave">Aves</button>
+        <button class="filter" data-filter="marino">Vida marina</button>
+      </div>
+
+      <div class="animal-grid" id="animalGrid">
+        <article class="animal-card" data-category="mamifero" data-name="tigre" data-fact="Las rayas de cada tigre son únicas, como las huellas dactilares.">
+          <div class="animal-photo">
+            <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=900&q=85" alt="Tigre entre vegetación" loading="lazy">
+            <span class="animal-type">MAMÍFERO</span>
+            <button class="favorite" type="button" aria-label="Guardar tigre" aria-pressed="false">♡</button>
+          </div>
+          <div class="animal-info">
+            <div><h3>Tigre</h3><p>Un felino fuerte, ágil y solitario.</p></div>
+            <button class="detail-btn" type="button" aria-label="Ver dato del tigre">↗</button>
+          </div>
+        </article>
+
+        <article class="animal-card" data-category="ave" data-name="guacamaya" data-fact="Las guacamayas usan su fuerte pico para abrir frutos y semillas.">
+          <div class="animal-photo">
+            <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=85" alt="Ave de plumaje colorido" loading="lazy">
+            <span class="animal-type">AVE</span>
+            <button class="favorite" type="button" aria-label="Guardar guacamaya" aria-pressed="false">♡</button>
+          </div>
+          <div class="animal-info">
+            <div><h3>Guacamaya</h3><p>Color, inteligencia y vida en grupo.</p></div>
+            <button class="detail-btn" type="button" aria-label="Ver dato de la guacamaya">↗</button>
+          </div>
+        </article>
+
+        <article class="animal-card" data-category="marino" data-name="tortuga marina" data-fact="Muchas tortugas marinas recorren enormes distancias durante sus migraciones.">
+          <div class="animal-photo">
+            <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=900&q=85" alt="Tortuga marina nadando" loading="lazy">
+            <span class="animal-type">VIDA MARINA</span>
+            <button class="favorite" type="button" aria-label="Guardar tortuga marina" aria-pressed="false">♡</button>
+          </div>
+          <div class="animal-info">
+            <div><h3>Tortuga marina</h3><p>Viajera del océano y sus corrientes.</p></div>
+            <button class="detail-btn" type="button" aria-label="Ver dato de la tortuga marina">↗</button>
+          </div>
+        </article>
+
+        <article class="animal-card" data-category="mamifero" data-name="zorro" data-fact="Los zorros tienen un oído muy desarrollado que les ayuda a localizar presas.">
+          <div class="animal-photo">
+            <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=900&q=85" alt="Zorro en la naturaleza" loading="lazy">
+            <span class="animal-type">MAMÍFERO</span>
+            <button class="favorite" type="button" aria-label="Guardar zorro" aria-pressed="false">♡</button>
+          </div>
+          <div class="animal-info">
+            <div><h3>Zorro</h3><p>Curioso, adaptable y muy observador.</p></div>
+            <button class="detail-btn" type="button" aria-label="Ver dato del zorro">↗</button>
+          </div>
+        </article>
+
+        <article class="animal-card" data-category="ave" data-name="búho" data-fact="Muchas especies de búhos pueden volar con muy poco ruido gracias a la estructura de sus plumas.">
+          <div class="animal-photo">
+            <img src="https://images.unsplash.com/photo-1549608276-5786777e6587?auto=format&fit=crop&w=900&q=85" alt="Búho posado en una rama" loading="lazy">
+            <span class="animal-type">AVE</span>
+            <button class="favorite" type="button" aria-label="Guardar búho" aria-pressed="false">♡</button>
+          </div>
+          <div class="animal-info">
+            <div><h3>Búho</h3><p>Un observador silencioso de la noche.</p></div>
+            <button class="detail-btn" type="button" aria-label="Ver dato del búho">↗</button>
+          </div>
+        </article>
+
+        <article class="animal-card" data-category="marino" data-name="delfín" data-fact="Los delfines se comunican mediante sonidos y señales, y algunas especies usan la ecolocalización.">
+          <div class="animal-photo">
+            <img src="https://images.unsplash.com/photo-1607153333879-c174d265f1d2?auto=format&fit=crop&w=900&q=85" alt="Delfín saltando en el mar" loading="lazy">
+            <span class="animal-type">VIDA MARINA</span>
+            <button class="favorite" type="button" aria-label="Guardar delfín" aria-pressed="false">♡</button>
+          </div>
+          <div class="animal-info">
+            <div><h3>Delfín</h3><p>Un mamífero marino social y comunicativo.</p></div>
+            <button class="detail-btn" type="button" aria-label="Ver dato del delfín">↗</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="favorite-note" id="favoriteNote" aria-live="polite">♡ Tus favoritos aparecerán marcados con un corazón.</div>
+    </section>
+
+    <section class="habitat-section section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ECOSISTEMAS</span>
+          <h2>La vida tiene muchos <em>escenarios</em></h2>
+        </div>
+        <p>Cada entorno necesita equilibrio para seguir lleno de vida.</p>
+      </div>
+
+      <div class="habitat-grid">
+        <article class="habitat-card habitat-ocean">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85" alt="Olas del océano" loading="lazy">
+          <div class="habitat-overlay">
+            <span>01 / AGUA</span>
+            <h3>Océanos<br>vivos</h3>
+            <p>El hogar de miles de especies, desde el plancton hasta los grandes mamíferos marinos.</p>
+            <a href="#protege">Cómo cuidarlos ↗</a>
+          </div>
+        </article>
+
+        <article class="habitat-card habitat-forest">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85" alt="Bosque verde y frondoso" loading="lazy">
+          <div class="habitat-overlay">
+            <span>02 / TIERRA</span>
+            <h3>Bosques<br>que respiran</h3>
+            <p>Refugio, alimento y conexión para una enorme diversidad de vida.</p>
+            <a href="#protege">Cómo cuidarlos ↗</a>
+          </div>
+        </article>
+
+        <article class="habitat-card habitat-sky">
+          <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85" alt="Paisaje natural al amanecer" loading="lazy">
+          <div class="habitat-overlay">
+            <span>03 / AIRE</span>
+            <h3>Cielos<br>en movimiento</h3>
+            <p>Las aves y los insectos ayudan a conectar ecosistemas y sostener la vida.</p>
+            <a href="#protege">Cómo cuidarlos ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="fact-band" id="datos">
+      <div class="fact-icon">✦</div>
+      <div>
+        <span class="eyebrow">¿LO SABÍAS?</span>
+        <h2>La naturaleza siempre<br>tiene algo que <em>enseñarnos.</em></h2>
+        <p id="factText">Pulsa el botón y descubre una curiosidad del mundo animal.</p>
+        <button class="btn btn-light" id="newFact" type="button">Otra curiosidad ↻</button>
+      </div>
+      <div class="fact-number" id="factNumber">01</div>
+      <div class="fact-decoration">〰</div>
+    </section>
+
+    <section class="protect section" id="protege">
+      <div class="protect-copy">
+        <span class="eyebrow">PEQUEÑAS ACCIONES, GRAN IMPACTO</span>
+        <h2>Proteger la fauna<br>empieza <em>contigo.</em></h2>
+        <p>No hace falta hacer algo enorme para ayudar. Los hábitos cotidianos pueden marcar una diferencia cuando muchas personas los practican.</p>
+        <a class="btn btn-primary" href="#contacto">Me uno al cambio ↗</a>
+      </div>
+
+      <div class="checklist">
+        <div class="checklist-heading"><span>MI LISTA DE ACCIONES</span><b id="taskProgress">0 de 5</b></div>
+        <p>Marca las acciones que puedes poner en práctica.</p>
+
+        <label class="task">
+          <input type="checkbox">
+          <span class="checkmark">✓</span>
+          <span><b>Reducir los residuos</b><small>Usa menos plásticos de un solo uso.</small></span>
+        </label>
+
+        <label class="task">
+          <input type="checkbox">
+          <span class="checkmark">✓</span>
+          <span><b>Respetar a los animales</b><small>Obsérvalos sin perseguirlos ni alimentarlos.</small></span>
+        </label>
+
+        <label class="task">
+          <input type="checkbox">
+          <span class="checkmark">✓</span>
+          <span><b>Cuidar los espacios verdes</b><small>No dejes basura en parques o senderos.</small></span>
+        </label>
+
+        <label class="task">
+          <input type="checkbox">
+          <span class="checkmark">✓</span>
+          <span><b>Ahorrar agua y energía</b><small>Usa los recursos de forma responsable.</small></span>
+        </label>
+
+        <label class="task">
+          <input type="checkbox">
+          <span class="checkmark">✓</span>
+          <span><b>Compartir lo que aprendo</b><small>Invita a otros a cuidar la biodiversidad.</small></span>
+        </label>
+
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <div class="progress-message" id="progressMessage" aria-live="polite">Cada pequeño paso cuenta. 🌱</div>
+      </div>
+    </section>
+
+    <section class="join-section" id="contacto">
+      <div class="join-decoration">✳</div>
+      <span class="eyebrow">SÉ PARTE DE LA EXPLORACIÓN</span>
+      <h2>El futuro también<br>es <em>cosa nuestra.</em></h2>
+      <p>Recibe ideas para aprender sobre animales, cuidar los ecosistemas y descubrir nuevas curiosidades.</p>
+
+      <form id="joinForm" class="join-form">
+        <label class="sr-only" for="joinEmail">Correo electrónico</label>
+        <input type="email" id="joinEmail" placeholder="Escribe tu correo electrónico" required>
+        <button type="submit">Quiero participar ↗</button>
+        <small id="joinMessage">Formulario demostrativo: no se envían datos a ningún servidor.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <a class="brand footer-brand" href="#inicio">
+        <span class="brand-icon">✦</span>
+        <span>fauna<span class="brand-blue">azul</span><small>UN MUNDO VIVO</small></span>
+      </a>
+      <p>Conocer para respetar.<br>Respetar para proteger. 💙</p>
+      <div class="footer-links">
+        <a href="#explora">Animales</a>
+        <a href="#protege">Acciones</a>
+        <a href="#datos">Curiosidades</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Fauna Azul</span>
+      <span>Un proyecto para celebrar la biodiversidad <b>✦</b></span>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="chat-widget" id="chatWidget">
+    <section class="chat-window" id="chatPopup" aria-label="Chat de Fauna Azul" aria-hidden="true">
+      <div class="chat-header">
+        <div class="chat-avatar">✦</div>
+        <div class="chat-title"><b>EcoAmigo</b><small><span></span> Aquí para ayudarte</small></div>
+        <button type="button" id="clearChat" aria-label="Reiniciar chat">↻</button>
+        <button type="button" id="closeChat" aria-label="Cerrar chat">×</button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages" aria-live="polite">
+        <div class="message bot-message">¡Hola, explorador! 🐾 Soy EcoAmigo. Pregúntame sobre animales, hábitats o formas de cuidar la naturaleza.</div>
+      </div>
+
+      <div class="quick-replies">
+        <button type="button" data-reply="Cuéntame sobre animales marinos">🌊 Animales marinos</button>
+        <button type="button" data-reply="¿Cómo puedo ayudar a la fauna?">🌿 Cómo ayudar</button>
+      </div>
+
+      <form class="chat-input-row" id="chatForm">
+        <label class="sr-only" for="chatInput">Escribe tu pregunta</label>
+        <input id="chatInput" type="text" maxlength="250" autocomplete="off" placeholder="Pregunta algo sobre animales...">
+        <button type="submit" aria-label="Enviar mensaje">↑</button>
+      </form>
+
+      <p class="chat-disclaimer">Chat educativo demostrativo · Respuestas automáticas</p>
+    </section>
+
+    <button type="button" class="chat-launcher" id="chatLauncher" aria-expanded="false" aria-controls="chatPopup">
+      <span class="launcher-icon">✦</span>
+      <span>Habla con EcoAmigo</span>
+      <span class="launcher-spark">●</span>
+    </button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
